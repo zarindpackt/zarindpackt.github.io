@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <form onsubmit="return submit_validation_print()">
+            <div class="row row1">
+                <div class="col-md-7">
+                    <div class="checkout-left ">
+                        <div class="details-content">
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Cart</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Information</a></li>
+                                    <li class="breadcrumb-item active">Payment </li>
+                                </ol>
+                            </nav>
+                            <div class="form-group">
+                                <div class="panel panel-default">
+                                    <div class="row top1">
+                                        <div class="col-md-2 top_contact">Contact</div>
+                                        <div class="col-md-8 top_email input-group"><input type="email" class="form-control"
+                                                id="top_email" name="top_email" value="someemail@gmail.com" onblur="top_email_validate()"
+                                                disabled></div>
+                                        <div class="col-md-2 top_change1" onclick="top_emailfunc()">Change</div>
+                                        <div id="label_top_email" style="display:none"></div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="row top2">
+                                        <div class="col-md-2 top_shipto">Ship To</div>
+                                        <div class="col-md-8 top_address input-group"><input type="text" class="form-control"
+                                                id="top_address" name="top_address" value="some address" onblur="top_shipto_validate()"
+                                                disabled></div>
+                                        <div class="col-md-2 top_change2" onclick="top_addressfunc()">Change</div>
+                                        <div id="label_top_shipto" style="display:none"></div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="row top3">
+                                        <div class="col-md-2">Method</div>
+                                        <div class="col-md-8">Standard Shipping (3-5 days)</div>
+                                        <!-- <div class="col-md-2">Change</div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>Payment</h4>
+                                <p>All transactions are secure and encrypted</p>
+                                <!-- credit card -->
+                                <div class="panel panel-default credit-card-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="row display-tr">
+                                            <div class="panel-title display-td">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" id="creditcardcheck"
+                                                        name="paymentcheck" checked>
+                                                    <label class="custom-control-label" for="creditcardcheck">
+                                                        <p class="panel-title display-td">Credit / Debit Card</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="display-td panel-sub">
+                                                <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="panel-body" id="panel_creditcard">
+                                        <div class="row card-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="cardNumber">Card Number<span class="required">*</span></label>
+                                                    <div class="input-group card-input cardnum">
+                                                        <input id="cardnumber" type="text" class="form-control" class="cardnumber"
+                                                            placeholder="Card Number" onblur="cardnumber_validate()">
+                                                        <div id="cciconlogo" class="cciconlogo">
+                                                            <svg id="ccicon" class="ccicon " width="65" height="30"
+                                                                viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div id="label_cardnumber" style="display:none"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="cardName">Name on card<span class="required">*</span></label>
+                                                    <div class="input-group card-input">
+                                                        <input type="text" class="form-control cardName" name="cardName"
+                                                            placeholder="Card Name" autocomplete="cc-name" maxlength="20"
+                                                            id="cardName" onblur="fullname_validate()">
+                                                    </div>
+                                                    <div id="label_fullname" style="display:none"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row date-code">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="expirationdate">Expiry Date (mm/yy)<span class="required">*</span></label>
+                                                            <div class="input-group card-input">
+                                                                <input id="expirationdate" class="form-control" type="text"
+                                                                    inputmode="numeric" placeholder="MM/YY" onblur="datecode_validate()">
+                                                            </div>
+                                                            <div id="label_date" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="securitycode">CVC<span class="required">*</span></label>
+                                                            <div class="input-group card-input">
+                                                                <input id="securitycode" class="form-control" type="text"
+                                                                    pattern="[0-9]*" inputmode="numeric" placeholder="***"
+                                                                    onblur="cvv_validate()">
+                                                            </div>
+                                                            <div id="label_cvv" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- credit card ends here -->
+                                <!-- paypal -->
+                                <div class="panel panel-default paypal-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="row display-tr">
+                                            <div class="panel-title display-td">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" id="paypalcheck"
+                                                        name="paymentcheck">
+                                                    <label class="custom-control-label" for="paypalcheck">
+                                                        <p class="panel-title display-td">PayPal</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="panel-body" id="panel_paypal" style="display: none;">
+                                        <div class="row card-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <p>You will be directed to PayPal website.</p>
+                                                </div>
+                                                <div class="primary paypal_btn pull-right">
+                                                    <button class="btn btn-primary" type="submit">
+                                                        <span>Continue to PayPal</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- billing address -->
+                            <div class="form-group">
+                                <h4>Shipping Address</h4>
+                                <div class="panel panel-default address-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="row display-tr">
+                                            <div class="panel-title display-td">
+                                                <div class="display-title">
+                                                    Add Shipping Address Details
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="panel-body" id="panel_address">
+                                        <div class="row card-row">
+                                            <div class="col-md-12">
+                                                <div class="row fullname">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="first-name">First Name<span class="required">*</span></label>
+                                                            <div class="input-group name-input">
+                                                                <input type="name" class="form-control firstName" name="firstName"
+                                                                    id="firstName" onblur="firstname_validate()"
+                                                                    placeholder="First Name" autocomplete="">
+                                                            </div>
+                                                            <div id="label_first_name" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="last-name">Last Name<span class="required">*</span></label>
+                                                            <div class="input-group name-input">
+                                                                <input type="name" class="form-control lastName" name="lastName"
+                                                                    id="lastName" onblur="lastname_validate()"
+                                                                    placeholder="Last Name" autocomplete="">
+                                                            </div>
+                                                            <div id="label_last_name" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address1">Address line 1<span class="required">*</span></label>
+                                                    <div class="input-group address-input">
+                                                        <input type="text" class="form-control address1" name="address1"
+                                                            id="address1" onblur="address1_validate()" placeholder="Address Line 1"
+                                                            autocomplete="">
+                                                    </div>
+                                                    <div id="label_address1" style="display:none"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address2">Address line 2<span class="required">*</span></label>
+                                                    <div class="input-group address-input">
+                                                        <input type="text" class="form-control address2" name="address2"
+                                                            id="address2" onblur="address2_validate()" placeholder="Address Line 2"
+                                                            autocomplete="">
+                                                    </div>
+                                                    <div id="label_address2" style="display:none"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="city">City<span class="required">*</span></label>
+                                                    <div class="input-group city-input">
+                                                        <input type="text" class="form-control city" name="city" id="city"
+                                                            onblur="city_validate()" placeholder="City" autocomplete="">
+                                                    </div>
+                                                    <div id="label_city" style="display:none"></div>
+                                                </div>
+                                                <div class="row country-city">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="country">Country<span class="required">*</span></label>
+                                                            <div>
+                                                                <select class="selectpicker form-control country" id="country"
+                                                                    name="country" onblur="country_validate()"></select>
+                                                            </div>
+                                                            <div id="label_country" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="state">State<span class="required">*</span></label>
+                                                            <div>
+                                                                <select class="selectpicker form-control state" name="state"
+                                                                    onblur="state_validate()" id="state"></select>
+                                                            </div>
+                                                            <div id="label_state" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row postal-code">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="postoption">Option</label>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-default dropdown-toggle dropdown-btn"
+                                                                    type="button" data-toggle="dropdown">Choose
+                                                                    Option
+                                                                    <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>Option 1</li>
+                                                                    <li>Option 2</li>
+                                                                    <li>Option 3</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="post-code">Postcode<span class="required">*</span></label>
+                                                            <div class="input-group postcode-input">
+                                                                <input type="text" class="form-control postCode" name="postCode"
+                                                                    id="postCode" onblur="postcode_validate()"
+                                                                    placeholder="Postcode" autocomplete="">
+                                                            </div>
+                                                            <div id="label_postcode" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phno">Phone</label>
+                                                    <div class="input-group phno-input">
+                                                        <input type="text" class="form-control" name="phno" placeholder="Phone  "
+                                                            autocomplete="" pattern="[0-9]*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="panel panel-default shipping-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="panel-title display-td">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="shippingaddress"
+                                                    name="addresscheck" checked>
+                                                <label class="custom-control-label" for="shippingaddress">
+                                                    <p class="panel-title display-td">Same as shipping address</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default billing-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="row display-tr">
+                                            <div class="panel-title display-td">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" id="billingaddress"
+                                                        name="addresscheck">
+                                                    <label class="custom-control-label" for="billingaddress">
+                                                        <p class="panel-title display-td">Use a different billing
+                                                            address</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="divider" />
+                                    <div class="panel-body" id="panel_billingaddress" style="display: none;">
+                                        <div class="row card-row">
+                                            <div class="col-md-12">
+                                                <div class="row fullname">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="first-name">First Name<span class="required">*</span></label>
+                                                            <div class="input-group name-input">
+                                                                <input type="name" class="form-control firstNameb" name="firstNameb"
+                                                                    id="firstNameb" onblur="firstnameb_validate()"
+                                                                    placeholder="First Name" autocomplete="">
+                                                            </div>
+                                                            <div id="label_first_nameb" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="last-name">Last Name<span class="required">*</span></label>
+                                                            <div class="input-group name-input">
+                                                                <input type="name" class="form-control lastNameb" name="lastNameb"
+                                                                    id="lastNameb" onblur="lastnameb_validate()"
+                                                                    placeholder="Last Name" autocomplete="">
+                                                            </div>
+                                                            <div id="label_last_nameb" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address1">Address line 1<span class="required">*</span></label>
+                                                    <div class="input-group address-input">
+                                                        <input type="text" class="form-control address1b" name="address1b"
+                                                            id="address1b" onblur="address1b_validate()" placeholder="Address Line 1"
+                                                            autocomplete="">
+                                                    </div>
+                                                    <div id="label_address1b" style="display:none"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address2">Address line 2<span class="required">*</span></label>
+                                                    <div class="input-group address-input">
+                                                        <input type="text" class="form-control address2b" name="address2b"
+                                                            id="address2b" onblur="address2b_validate()" placeholder="Address Line 2"
+                                                            autocomplete="">
+                                                    </div>
+                                                    <div id="label_address2b" style="display:none"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="city">City<span class="required">*</span></label>
+                                                    <div class="input-group city-input">
+                                                        <input type="text" class="form-control cityb" name="cityb" id="cityb"
+                                                            onblur="cityb_validate()" placeholder="City" autocomplete="">
+                                                    </div>
+                                                    <div id="label_cityb" style="display:none"></div>
+                                                </div>
+                                                <div class="row country-city">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="countryb">Country<span class="required">*</span></label>
+                                                            <div>
+                                                                <select class="selectpicker form-control countryb" id="countryb"
+                                                                    name="countryb" onblur="countryb_validate()"></select>
+                                                            </div>
+                                                            <div id="label_countryb" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="stateb">State<span class="required">*</span></label>
+                                                            <div>
+                                                                <select class="selectpicker form-control stateb" name="stateb"
+                                                                    onblur="stateb_validate()" id="stateb"></select>
+                                                            </div>
+                                                            <div id="label_stateb" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row postal-code">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="postoption">Option</label>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-default dropdown-toggle dropdown-btn"
+                                                                    type="button" data-toggle="dropdown">Choose
+                                                                    Option
+                                                                    <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>Option 1</li>
+                                                                    <li>Option 2</li>
+                                                                    <li>Option 3</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="post-code">Postcode<span class="required">*</span></label>
+                                                            <div class="input-group postcode-input">
+                                                                <input type="text" class="form-control postCodeb" name="postCodeb"
+                                                                    id="postCodeb" onblur="postcodeb_validate()"
+                                                                    placeholder="Postcode" autocomplete="">
+                                                            </div>
+                                                            <div id="label_postcodeb" style="display:none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phno">Phone</label>
+                                                    <div class="input-group phno-input">
+                                                        <input type="text" class="form-control" name="phno" placeholder="Phone  "
+                                                            autocomplete="" pattern="[0-9]*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- billing address ends -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="checkout-right col-md-12">
+                        <div class="row product-box">
+                            <div class="col-4">
+                                <img src="https://via.placeholder.com/100">
+                            </div>
+                            <div class="col-4">
+                                <p>Learning something some edition</p>
+                            </div>
+                            <div class="col-4 pull-right">
+                                <p>£10.00</p>
+                            </div>
+                        </div>
+                        <div class="row product-box">
+                            <div class="col-4">
+                                <img src="https://via.placeholder.com/100">
+                            </div>
+                            <div class="col-4">
+                                <p>Learning something some edition</p>
+                            </div>
+                            <div class="col-4 pull-right">
+                                <p>£10.00</p>
+                            </div>
+                        </div>
+                        <hr class="divider-right" />
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <div class="input-group discount-input">
+                                        <input type="text" class="form-control" name="discountCode" placeholder="Discount Code"
+                                            autocomplete="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pull-right">
+                                <div class="btn-group submit-btn">
+                                    <button type="button" class="btn btn-primary">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider-right" />
+                        <div class="row cost-box">
+                            <div class="col-8">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="col-4 pull-right">
+                                <p>£10.00</p>
+                            </div>
+                        </div>
+                        <div class="row cost-box">
+                            <div class="col-8">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="col-4 pull-right">
+                                <p>£10.00</p>
+                            </div>
+                        </div>
+                        <hr class="divider-right" />
+                        <div class="row">
+                            <div class="col-8">
+                                <strong>Total</strong>
+                            </div>
+                            <div class="col-4 pull-right">
+                                <strong>£10.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add to cart and submit -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 return-btn">
+                        <div class="btn-group">
+                            <button type="button" class="btn">
+                                &lt; Return to cart</button> </div>
+                    </div>
+                    <div class="col-md-6 submit-btn">
+                        <div class="btn-group ">
+                            <button type="submit" class="btn btn-primary">Complete Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-12">
+            <div class="btn-group ">
+                <a href="https://zarindpackt.github.io/checkout_1157_new_user/print/shipping.html"><button class="btn btn-primary">
+                        Demo Continue to Complete Order</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("input[name='paymentcheck']").click(function () {
+            if ($("#creditcardcheck").is(":checked")) {
+                $("#panel_creditcard").show();
+                $("#panel_paypal").hide();
+            }
+            else {
+                $("#panel_paypal").show();
+                $("#panel_creditcard").hide();
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("input[name='addresscheck']").click(function () {
+            if ($("#shippingaddress").is(":checked")) {
+                $("#panel_billingaddress").hide();
+            }
+            else {
+                $("#panel_billingaddress").show();
+
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    function top_emailfunc() {
+        document.getElementById('top_email').removeAttribute('disabled');
+    }
+</script>
+<script type="text/javascript">
+    function top_addressfunc() {
+        document.getElementById('top_address').removeAttribute('disabled')
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+<script type="text/javascript" src="js/card_details.js"></script>
+<script type="text/javascript" src="js/printcheckout.js"></script>
+<script type="text/javascript" src="js/countries.js"></script>
+<script language="javascript">
+    populateCountries("country", "state");
+    populateCountries("countryb", "stateb"); 
+</script>
+
+</html>

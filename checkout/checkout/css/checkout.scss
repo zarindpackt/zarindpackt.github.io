@@ -1,0 +1,395 @@
+$color_1: #707070;
+$color_2: red;
+$color_3: #000;
+$color_4: green;
+$color_5: #fff;
+$background_color_1: #fafafa;
+$background_color_2: #eb6611;
+$border_color_1: #ddd;
+$border_color_2: #eb6611;
+
+/* checkout left */
+/* checkout left */
+/* checkout right */
+/* checkout payment */
+/* The message box is shown when the user clicks on the password field */
+/* Add a green text color and a checkmark when the requirements are right */
+/* Add a red text color and an "x" when the requirements are wrong */
+.container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.row1 {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 25px;
+}
+.breadcrumb {
+	background-color: $background_color_1;
+}
+.logo {
+	width: 165px;
+	height: 64px;
+}
+.top1 {
+	padding: 5px;
+	margin-left: 0px;
+}
+.top_contact {
+	margin-top: 10px;
+}
+.top_change1 {
+	margin-top: 10px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.top_change2 {
+	cursor: pointer;
+	text-decoration: underline;
+	margin-top: 10px;
+}
+.top2 {
+	padding: 5px;
+	margin-left: 0px;
+}
+.top_shipto {
+	margin-top: 10px;
+}
+.top3 {
+	padding: 5px;
+	margin-left: 0px;
+}
+#cardnumber {
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	width: 100%;
+}
+.cardnum {
+	flex-direction: column;
+}
+.breadcrumb-item {
+	&+.breadcrumb-item {
+		&::before {
+			content: ">";
+		}
+	}
+	font-size: 16px;
+}
+.payment-title {
+	font-size: 24px;
+}
+hr.divider {
+	margin: 0em;
+	border-width: 2px;
+}
+.panel-default {
+	border-color: $border_color_1;
+}
+.panel {
+	background-color: $background_color_1;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.credit-card-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	.panel-sub {
+		display: table-cell;
+		vertical-align: middle;
+		width: 33.33%;
+	}
+	label {
+		display: block;
+	}
+}
+.card-row {
+	margin-top: 10px;
+}
+.custom-radio {
+	padding-left: 40px;
+}
+.display-table {
+	height: 42px;
+}
+.panel-body {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.row {
+	>.date-code {
+		margin-top: none;
+	}
+}
+.paypal_btn {
+	font-weight: bold;
+	float: right;
+	margin-bottom: 10px;
+}
+.paypal-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	.panel-sub {
+		display: table-cell;
+		vertical-align: middle;
+		width: 33.33%;
+	}
+	label {
+		display: block;
+	}
+}
+.account-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 66%;
+	}
+	.panel-sub {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+.billing-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	.panel-sub {
+		display: table-cell;
+		vertical-align: middle;
+		width: 33.33%;
+	}
+	label {
+		display: block;
+	}
+}
+.dropdown-btn {
+	border: 1px solid #ced4da;
+}
+.btn {
+	&:focus {
+		box-shadow: 0 0 0 0;
+	}
+}
+.checkout-right {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: $background_color_1;
+}
+.divider-right {
+	margin: 1em;
+	border-width: 2px;
+}
+.product-box {
+	margin-bottom: 5px;
+}
+.shipping-box {
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	.display-table {
+		display: table;
+	}
+}
+.display-title {
+	padding-left: 20px;
+}
+.address-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+}
+.form-container {
+	.field-container {
+		&:first-of-type {
+			grid-area: name;
+		}
+		&:nth-of-type(2) {
+			grid-area: number;
+		}
+		&:nth-of-type(3) {
+			grid-area: expiration;
+		}
+		&:nth-of-type(4) {
+			grid-area: security;
+		}
+	}
+	display: grid;
+	grid-column-gap: 10px;
+	grid-template-columns: auto auto;
+	grid-template-rows: 90px 90px 90px;
+	grid-template-areas: "name name""number number""expiration security";
+	max-width: 400px;
+	padding: 20px;
+	color: $color_1;
+}
+.field-container {
+	input {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	position: relative;
+}
+input {
+	margin-top: 3px;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 3px;
+	border: 1px solid #dcdcdc;
+}
+.cciconlogo {
+	position: absolute;
+	align-self: flex-end;
+	z-index: 1000;
+	margin-top: 7px;
+}
+.required {
+	color: $color_2;
+}
+#message {
+	display: none;
+	color: $color_3;
+	padding-left: 20px;
+}
+.valid {
+	color: $color_4;
+	margin-bottom: 0px;
+	&:before {
+		position: relative;
+		left: -35px;
+		content: "✔";
+	}
+}
+.invalid {
+	color: $color_2;
+	margin-bottom: 0px;
+	&:before {
+		position: relative;
+		left: -35px;
+		content: "✖";
+	}
+}
+.psw-title {
+	margin-bottom: 0px;
+}
+.checkbox-email {
+	border: 1px solid #ced4da;
+	padding: 10px;
+}
+.checkbox-sms {
+	border: 1px solid #ced4da;
+	padding: 10px;
+}
+.checkbox-post {
+	border: 1px solid #ced4da;
+	padding: 10px;
+}
+.contact-pref-box {
+	.display-table {
+		display: table;
+	}
+	.display-tr {
+		display: table-row;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.panel-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 66%;
+	}
+	.panel-sub {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+.contact-pref-text {
+	padding: 10px;
+}
+.btn-primary {
+	color: $color_5;
+	background-color: $background_color_2;
+	border-color: $border_color_2;
+	&:hover {
+		color: $color_5 !important;
+		background-color: $background_color_2 !important;
+		border-color: $border_color_2 !important;
+	}
+	&:active {
+		color: $color_5 !important;
+		background-color: $background_color_2 !important;
+		border-color: $border_color_2 !important;
+	}
+	&:focus {
+		color: $color_5 !important;
+		background-color: $background_color_2 !important;
+		border-color: $border_color_2 !important;
+	}
+}
+.shipping-table {
+	padding: 15px 50px 0px 30px;
+}
+.shipping-type-box {
+	.panel-title {
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width: 439px) {
+	.credit-card-box {
+		.panel-sub {
+			display: none;
+		}
+	}
+}

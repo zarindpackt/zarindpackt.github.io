@@ -1,0 +1,426 @@
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.breadcrumb{
+    background-color : #fafafa ;
+}
+
+.logo{
+    width: 165px;
+    height:64px;
+}
+
+.top1{
+    padding : 5px;
+    margin-left: 0px;
+}
+
+.top_contact, .top_change1{
+    margin-top: 10px;
+}
+
+.top_change1, .top_change2{
+    cursor: pointer;;
+    text-decoration: underline;
+}
+
+.top2{
+    padding : 5px;
+    margin-left: 0px;
+}
+
+.top_shipto ,.top_change2{
+    margin-top: 10px;
+}
+
+.top3{
+    padding : 5px;
+    margin-left: 0px;
+}
+
+#cardnumber{
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    width: 100%;
+}
+
+.cardnum{
+    flex-direction: column;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+}
+
+.breadcrumb-item{
+    font-size:16px;
+}
+
+.payment-title{
+    font-size: 24px;
+}
+
+hr.divider { 
+    margin: 0em;
+    border-width: 2px;
+  } 
+
+/* checkout left */
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    /* margin-bottom: 20px; */
+    background-color: #fafafa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.credit-card-box .display-table {
+    display: table;
+}
+
+.credit-card-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.credit-card-box  .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.card-row{
+    margin-top:10px;
+}
+
+.credit-card-box .panel-sub {
+    display: table-cell;
+    vertical-align: middle;
+    width: 33.33%;
+}
+
+.custom-radio{
+    padding-left:40px;
+}
+
+.display-table{
+    height:42px;
+}
+
+.credit-card-box label {
+    display: block;
+}
+
+.panel-body{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.row >.date-code{
+    margin-top:none;
+}
+
+.paypal_btn{
+    font-weight: bold;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.paypal-box .display-table {
+    display: table;
+}
+
+.paypal-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.paypal-box  .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.paypal-box .panel-sub {
+    display: table-cell;
+    vertical-align: middle;
+    width: 33.33%;
+}
+
+.paypal-box label {
+    display: block;
+}
+
+.account-box .display-table {
+    display: table;
+}
+
+.account-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.account-box .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 66%;
+}
+
+.account-box .panel-sub {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.billing-box .display-table {
+    display: table;
+}
+
+.billing-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.billing-box  .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.billing-box .panel-sub {
+    display: table-cell;
+    vertical-align: middle;
+    width: 33.33%;
+}
+
+.billing-box label {
+    display: block;
+}
+
+.dropdown-btn{
+    border: 1px solid #ced4da;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0;
+}
+/* checkout left */
+
+/* checkout right */
+
+.checkout-right{
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #fafafa ;
+}
+
+.divider-right
+{
+    margin: 1em;
+    border-width: 2px;
+}
+
+.product-box{
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 439px) {
+    .credit-card-box .panel-sub{
+        display:none;
+    }
+}
+
+
+.shipping-box .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.shipping-box .display-table {
+    display: table;
+}
+
+
+.display-title{
+    padding-left:20px;
+}
+
+.address-box .display-table {
+    display: table;
+}
+
+.address-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.address-box .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* checkout payment */
+
+
+.form-container .field-container:first-of-type {
+    grid-area: name;
+}
+
+.form-container .field-container:nth-of-type(2) {
+    grid-area: number;
+}
+
+.form-container .field-container:nth-of-type(3) {
+    grid-area: expiration;
+}
+
+.form-container .field-container:nth-of-type(4) {
+    grid-area: security;
+}
+
+.field-container input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.field-container {
+    position: relative;
+}
+
+.form-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 90px 90px 90px;
+    grid-template-areas: "name name""number number""expiration security";
+    max-width: 400px;
+    padding: 20px;
+    color: #707070;
+}
+
+input {
+    margin-top: 3px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+}
+
+ .cciconlogo {
+    position: absolute;
+    align-self: flex-end;
+    z-index: 1000;
+    margin-top: 7px;
+}
+
+.required {
+    color: red;
+  }
+
+
+  /* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    color: #000;
+    padding-left: 20px;
+    /* margin-top: 10px; */
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+    margin-bottom: 0px;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+    margin-bottom: 0px;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+
+  .psw-title{
+      margin-bottom: 0px;
+  }
+
+  .checkbox-email ,.checkbox-sms,.checkbox-post
+  {
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+
+
+  .contact-pref-box .display-table {
+    display: table;
+}
+
+.contact-pref-box .display-tr {
+    display: table-row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.contact-pref-box .panel-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 66%;
+}
+
+.contact-pref-box .panel-sub {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.contact-pref-text{
+    padding: 10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #eb6611;
+    border-color: #eb6611;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+    color: #fff !important;
+    background-color: #eb6611 !important;
+    border-color: #eb6611 !important;
+}
+
+.shipping-table{
+    padding: 15px 50px 0px 30px;
+}
+
+.shipping-type-box .panel-title {
+    padding-left: 20px;
+}
+

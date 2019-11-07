@@ -1,0 +1,11 @@
+1158 existing user 
+ebooks and videos:https://zarindpackt.github.io/checkout_1158_existing_user/exisiting_user_ebooks_videos.html
+print: https://zarindpackt.github.io/checkout_1158_existing_user/exisiting_user_print.html
+
+1157 new user:
+ebooks and videos:https://zarindpackt.github.io/checkout_1157_new_user/ebooksandvideos/checkout_details.html
+print: https://zarindpackt.github.io/checkout_1157_new_user/print/checkout_details.html
+
+923 guest user:
+ebooks and videos:https://zarindpackt.github.io/checkout_923_guest_user/guest_user_ebooks_videos.html
+print: https://zarindpackt.github.io/checkout_923_guest_user/guest_user_print.html
